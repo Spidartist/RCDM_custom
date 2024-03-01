@@ -183,7 +183,7 @@ def get_model(model="dino", use_head=False):
 
     elif model == "ijepa":
         embedding_model = vit_base(patch_size=14, img_size=[224])
-        ckpt = torch.load("/mnt/quanhd/RCDM/ijepa_ckpt/jepa-latest.pth.tar")
+        ckpt = torch.load("../ijepa_ckpt/jepa-latest.pth.tar")
         msg = embedding_model.load_state_dict(ckpt["target_encoder"])
         embedding_model.eval()
         print(msg)
